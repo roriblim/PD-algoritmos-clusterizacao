@@ -1,6 +1,6 @@
 # PD-algoritmos-clusterizacao
 
-#### Procedimentos utilizados para criar o ambiente virtual
+#### Procedimentos utilizados para preparar o ambiente
 Para criar o ambiente virtual:
 ```
 conda create --name PD_algoritmos_clusterizacao python=3.12 --no-default-packages -y
