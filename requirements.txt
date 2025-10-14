@@ -4,6 +4,8 @@
 #
 #    pip-compile
 #
+annotated-types==0.7.0
+    # via pydantic
 anyio==4.11.0
     # via
     #   httpx
@@ -22,6 +24,7 @@ attrs==25.4.0
     # via
     #   jsonschema
     #   referencing
+    #   visions
 babel==2.17.0
     # via jupyterlab-server
 beautifulsoup4==4.14.2
@@ -45,6 +48,8 @@ contourpy==1.3.3
     # via matplotlib
 cycler==0.12.1
     # via matplotlib
+dacite==1.9.2
+    # via ydata-profiling
 debugpy==1.8.17
     # via ipykernel
 decorator==5.2.1
@@ -55,6 +60,8 @@ executing==2.2.1
     # via stack-data
 fastjsonschema==2.21.2
     # via nbformat
+filetype==1.2.0
+    # via ydata-profiling
 fonttools==4.60.1
     # via matplotlib
 fqdn==1.5.1
@@ -71,6 +78,10 @@ idna==3.11
     #   httpx
     #   jsonschema
     #   requests
+imagehash==4.3.1
+    # via
+    #   visions
+    #   ydata-profiling
 ipykernel==7.0.0
     # via
     #   jupyter
@@ -95,8 +106,11 @@ jinja2==3.1.6
     #   jupyterlab
     #   jupyterlab-server
     #   nbconvert
+    #   ydata-profiling
 joblib==1.5.2
-    # via scikit-learn
+    # via
+    #   phik
+    #   scikit-learn
 json5==0.12.1
     # via jupyterlab-server
 jsonpointer==3.0.0
@@ -157,20 +171,31 @@ kiwisolver==1.4.9
     # via matplotlib
 lark==1.3.0
     # via rfc3987-syntax
+llvmlite==0.44.0
+    # via numba
 markupsafe==3.0.3
     # via
     #   jinja2
     #   nbconvert
-matplotlib==3.10.7
+matplotlib==3.10.0
     # via
     #   -r requirements.in
+    #   phik
     #   seaborn
+    #   wordcloud
+    #   ydata-profiling
 matplotlib-inline==0.1.7
     # via
     #   ipykernel
     #   ipython
+minify-html==0.16.4
+    # via ydata-profiling
 mistune==3.1.4
     # via nbconvert
+multimethod==1.12
+    # via
+    #   visions
+    #   ydata-profiling
 nbclient==0.10.2
     # via nbconvert
 nbconvert==7.16.6
@@ -184,21 +209,36 @@ nbformat==5.10.4
     #   nbconvert
 nest-asyncio==1.6.0
     # via ipykernel
+networkx==3.5
+    # via visions
 notebook==7.4.7
-    # via jupyter
+    # via
+    #   -r requirements.in
+    #   jupyter
 notebook-shim==0.2.4
     # via
     #   jupyterlab
     #   notebook
-numpy==2.3.3
+numba==0.61.0
+    # via ydata-profiling
+numpy==2.1.3
     # via
     #   -r requirements.in
     #   contourpy
+    #   imagehash
     #   matplotlib
+    #   numba
     #   pandas
+    #   patsy
+    #   phik
+    #   pywavelets
     #   scikit-learn
     #   scipy
     #   seaborn
+    #   statsmodels
+    #   visions
+    #   wordcloud
+    #   ydata-profiling
 packaging==25.0
     # via
     #   ipykernel
@@ -208,18 +248,31 @@ packaging==25.0
     #   jupyterlab-server
     #   matplotlib
     #   nbconvert
+    #   statsmodels
 pandas==2.3.3
     # via
     #   -r requirements.in
+    #   phik
     #   seaborn
+    #   statsmodels
+    #   visions
+    #   ydata-profiling
 pandocfilters==1.5.1
     # via nbconvert
 parso==0.8.5
     # via jedi
+patsy==1.0.1
+    # via statsmodels
 pexpect==4.9.0
     # via ipython
+phik==0.12.5
+    # via ydata-profiling
 pillow==11.3.0
-    # via matplotlib
+    # via
+    #   imagehash
+    #   matplotlib
+    #   visions
+    #   wordcloud
 platformdirs==4.5.0
     # via jupyter-core
 prometheus-client==0.23.1
@@ -236,8 +289,14 @@ ptyprocess==0.7.0
     #   terminado
 pure-eval==0.2.3
     # via stack-data
+puremagic==1.30
+    # via visions
 pycparser==2.23
     # via cffi
+pydantic==2.12.1
+    # via ydata-profiling
+pydantic-core==2.41.3
+    # via pydantic
 pygments==2.19.2
     # via
     #   ipython
@@ -256,8 +315,12 @@ python-json-logger==4.0.0
     # via jupyter-events
 pytz==2025.2
     # via pandas
+pywavelets==1.9.0
+    # via imagehash
 pyyaml==6.0.3
-    # via jupyter-events
+    # via
+    #   jupyter-events
+    #   ydata-profiling
 pyzmq==27.1.0
     # via
     #   ipykernel
@@ -270,7 +333,9 @@ referencing==0.37.0
     #   jsonschema-specifications
     #   jupyter-events
 requests==2.32.5
-    # via jupyterlab-server
+    # via
+    #   jupyterlab-server
+    #   ydata-profiling
 rfc3339-validator==0.1.4
     # via
     #   jsonschema
@@ -287,10 +352,17 @@ rpds-py==0.27.1
     #   referencing
 scikit-learn==1.7.2
     # via -r requirements.in
-scipy==1.16.2
-    # via scikit-learn
+scipy==1.15.3
+    # via
+    #   imagehash
+    #   phik
+    #   scikit-learn
+    #   statsmodels
+    #   ydata-profiling
 seaborn==0.13.2
-    # via -r requirements.in
+    # via
+    #   -r requirements.in
+    #   ydata-profiling
 send2trash==1.8.3
     # via jupyter-server
 six==1.17.0
@@ -303,6 +375,8 @@ soupsieve==2.8
     # via beautifulsoup4
 stack-data==0.6.3
     # via ipython
+statsmodels==0.14.5
+    # via ydata-profiling
 terminado==0.18.1
     # via
     #   jupyter-server
@@ -319,6 +393,8 @@ tornado==6.5.2
     #   jupyterlab
     #   notebook
     #   terminado
+tqdm==4.67.1
+    # via ydata-profiling
 traitlets==5.14.3
     # via
     #   ipykernel
@@ -334,19 +410,29 @@ traitlets==5.14.3
     #   nbclient
     #   nbconvert
     #   nbformat
+typeguard==4.4.4
+    # via ydata-profiling
 types-python-dateutil==2.9.0.20251008
     # via arrow
 typing-extensions==4.15.0
     # via
     #   anyio
     #   beautifulsoup4
+    #   pydantic
+    #   pydantic-core
     #   referencing
+    #   typeguard
+    #   typing-inspection
+typing-inspection==0.4.2
+    # via pydantic
 tzdata==2025.2
     # via pandas
 uri-template==1.3.0
     # via jsonschema
 urllib3==2.5.0
     # via requests
+visions[type-image-path]==0.8.1
+    # via ydata-profiling
 wcwidth==0.2.14
     # via prompt-toolkit
 webcolors==24.11.1
@@ -359,6 +445,10 @@ websocket-client==1.9.0
     # via jupyter-server
 widgetsnbextension==4.0.14
     # via ipywidgets
+wordcloud==1.9.4
+    # via ydata-profiling
+ydata-profiling==4.17.0
+    # via -r requirements.in
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools
