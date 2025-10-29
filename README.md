@@ -1,20 +1,31 @@
 # PD-algoritmos-clusterizacao
 
 #### Procedimentos utilizados para preparar o ambiente
-Para criar o ambiente virtual:
+
+1. Foi utilizado o Anaconda 25.5.1 para gerenciar o ambiente virtual.
+
+2. Para ativar o Anaconda, foi feito:
 ```
-conda create --name PD_algoritmos_clusterizacao python=3.12 --no-default-packages -y
+source ~/anaconda3/bin/activate
 ```
-Para ativar o ambiente virtual:
+
+3. Para criar o ambiente virtual, com o Anaconda ativado, foi feito:
+```
+conda create --name PD_clusterizacao python=3.12 --no-default-packages -y
+```
+
+4. Para ativar o ambiente virtual, com o Anaconda ativado, foi feito:
 ```
 conda activate PD_algoritmos_clusterizacao
 ```
-Com o requirements.in, posso gerar o requirements.txt com as dependências pinadas. Para isso, vou instalar o pip-tools e realizar o pip-compile:
+
+5. Com o requirements.in, posso gerar o requirements.txt com as dependências pinadas. Para isso, foi instalado o pip-tools e realizado o pip-compile:
 ```
-python -m pip install pip-tool
+python -m pip install pip-tools
 pip-compile
 ```
-Por fim, para instalar as dependências do requirements.txt:
+
+6. Por fim, para instalar as dependências do requirements.txt:
 ```
 pip install -r requirements.txt
 ```
