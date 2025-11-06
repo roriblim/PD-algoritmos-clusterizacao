@@ -16,7 +16,7 @@ conda create --name PD_clusterizacao python=3.12 --no-default-packages -y
 
 4. Para ativar o ambiente virtual, com o Anaconda ativado, foi feito:
 ```
-conda activate PD_algoritmos_clusterizacao
+conda activate PD_clusterizacao
 ```
 
 5. Com o requirements.in, posso gerar o requirements.txt com as dependências pinadas. Para isso, foi instalado o pip-tools e realizado o pip-compile:
